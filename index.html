@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>YouTube Clone</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="header-left">
+      <span class="material-icons menu-icon" id="menu-btn">menu</span>
+      <div class="logo">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/b/b8/YouTube_Logo_2017.svg" alt="YouTube Logo">
+      </div>
+    </div>
+    <div class="header-center">
+      <input type="text" placeholder="Search" class="search-bar">
+      <button class="search-button">
+        <span class="material-icons">search</span>
+      </button>
+    </div>
+    <div class="header-right">
+      <span class="material-icons icon">notifications</span>
+      <span class="material-icons icon">account_circle</span>
+    </div>
+  </header>
+
+  <!-- Main Container -->
+  <div class="container">
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+      <ul>
+        <li id="home" class="active">
+          <span class="material-icons">home</span>
+          <span>Home</span>
+        </li>
+        <li id="explore">
+          <span class="material-icons">explore</span>
+          <span>Explore</span>
+        </li>
+        <li id="subscriptions">
+          <span class="material-icons">subscriptions</span>
+          <span>Subscriptions</span>
+        </li>
+        <li id="library">
+          <span class="material-icons">video_library</span>
+          <span>Library</span>
+        </li>
+        <li id="history">
+          <span class="material-icons">history</span>
+          <span>History</span>
+        </li>
+        <li id="settings">
+          <span class="material-icons">settings</span>
+          <span>Settings</span>
+        </li>
+        <li id="help">
+          <span class="material-icons">help</span>
+          <span><a href="https://support.google.com/youtube/" target="_blank">Help</a></span>
+        </li>
+        <li id="feedback">
+          <span class="material-icons">feedback</span>
+          <span><a href="https://support.google.com/youtube/answer/4347644" target="_blank">Send Feedback</a></span>
+        </li>
+      </ul>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content" id="main-content">
+      <div class="video-grid" id="content">
+        <!-- Video Card -->
+        <div class="video-card">
+          <!-- Thumbnail Image -->
+          <img src="https://lh3.googleusercontent.com/drive-viewer/AFGJ81qu1ysdr9h-thumbnail-url" alt="Thumbnail" class="thumbnail">
+          <div class="video-info">
+            <!-- Channel Icon -->
+            <div class="channel-icon">
+              <img src="https://www.citypng.com/public/uploads/preview/red-youtube-logo-symbol-701751694792489qxkccchok1.png" alt="Channel Icon">
+            </div>
+            <div>
+              <h3>Sample Video</h3>
+              <p>Channel Name</p>
+              <p>1M views • 2 days ago</p>
+            </div>
+            <span class="material-icons menu-dots" data-menu-id="menu1">more_vert</span>
+          </div>
+          <div class="menu-dropdown" id="menu1">
+            <ul>
+              <li>Save to Watch Later</li>
+              <li>Add to Playlist</li>
+              <li>Not Interested</li>
+              <li>Report</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <!-- Settings Modal -->
+  <div id="settings-modal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Settings</h2>
+      <ul class="settings-list">
+        <li>General Settings</li>
+        <li>Video Playback</li>
+        <li>Notifications</li>
+        <li>Privacy Settings</li>
+        <li>Account Settings</li>
+        <li>Connected Devices</li>
+        <li>Download Settings</li>
+        <li>Data Saving</li>
+        <li>Appearance</li>
+        <li>Subscriptions</li>
+        <li>Parental Controls</li>
+        <li>Advanced Settings</li>
+        <li>About</li>
+        <li>YouTube Studio</li>
+      </ul>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

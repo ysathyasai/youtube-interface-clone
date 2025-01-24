@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>YouTube Interface Clone</title>
+  <!-- Link to external CSS stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+  <!-- Link to Google Material Icons for iconography -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+  <!-- Header section -->
+  <header>
+    <div class="header-left">
+      <!-- Menu icon for toggling the sidebar -->
+      <span class="material-icons menu-icon" id="menu-btn">menu</span>
+      <!-- YouTube logo -->
+      <div class="logo">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/b/b8/YouTube_Logo_2017.svg" alt="YouTube Logo">
+      </div>
+    </div>
+    <div class="header-center">
+      <!-- Search bar input field -->
+      <input type="text" placeholder="Search" class="search-bar">
+      <!-- Search button -->
+      <button class="search-button">
+        <span class="material-icons">search</span>
+      </button>
+    </div>
+    <div class="header-right">
+      <!-- Notifications icon -->
+      <span class="material-icons icon">notifications</span>
+      <!-- Account/profile icon -->
+      <span class="material-icons icon">account_circle</span>
+    </div>
+  </header>
+
+  <!-- Main container for sidebar and main content -->
+  <div class="container">
+    <!-- Sidebar section -->
+    <aside class="sidebar" id="sidebar">
+      <ul>
+        <!-- Sidebar navigation links -->
+        <li id="home" class="active">
+          <span class="material-icons">home</span>
+          <span>Home</span>
+        </li>
+        <li id="explore">
+          <span class="material-icons">explore</span>
+          <span>Explore</span>
+        </li>
+        <li id="subscriptions">
+          <span class="material-icons">subscriptions</span>
+          <span>Subscriptions</span>
+        </li>
+        <li id="library">
+          <span class="material-icons">video_library</span>
+          <span>Library</span>
+        </li>
+        <li id="history">
+          <span class="material-icons">history</span>
+          <span>History</span>
+        </li>
+        <li id="settings">
+          <span class="material-icons">settings</span>
+          <span>Settings</span>
+        </li>
+        <li id="help">
+          <span class="material-icons">help</span>
+          <span><a href="https://support.google.com/youtube/" target="_blank">Help</a></span>
+        </li>
+        <li id="feedback">
+          <span class="material-icons">feedback</span>
+          <span><a href="https://support.google.com/youtube/answer/4347644" target="_blank">Send Feedback</a></span>
+        </li>
+      </ul>
+    </aside>
+
+    <!-- Main content area -->
+    <main class="main-content" id="main-content">
+      <div class="video-grid" id="content">
+        <!-- Example of a video card -->
+        <div class="video-card">
+          <div class="video-info">
+            <!-- Channel icon -->
+            <div class="channel-icon">
+              <img src="https://www.citypng.com/public/uploads/preview/red-youtube-logo-symbol-701751694792489qxkccchok1.png" alt="Channel Icon">
+            </div>
+            <div>
+              <h3>Sample Video</h3>
+              <p>Channel Name</p>
+              <p>1M views • 2 days ago</p>
+            </div>
+            <!-- More options icon -->
+            <span class="material-icons menu-dots" data-menu-id="menu1">more_vert</span>
+          </div>
+          <!-- Dropdown menu for additional options -->
+          <div class="menu-dropdown" id="menu1">
+            <ul>
+              <li class="menu-option" data-action="watch-later">Save to Watch Later</li>
+              <li class="menu-option" data-action="playlist">Save to Playlist</li>
+              <li class="menu-option" data-action="download">Download Video</li>
+              <li class="menu-option" data-action="report">Report</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <!-- Modal for settings -->
+  <div id="settings-modal" class="modal">
+    <div class="modal-content">
+      <!-- Close button for the modal -->
+      <span class="close">&times;</span>
+      <h2>Settings</h2>
+      <!-- List of settings options -->
+      <ul class="settings-list">
+        <li>General Settings</li>
+        <li>Video Playback</li>
+        <li>Notifications</li>
+        <li>Privacy Settings</li>
+        <li>Account Settings</li>
+        <li>Connected Devices</li>
+        <li>Download Settings</li>
+        <li>Data Saving</li>
+        <li>Appearance</li>
+        <li>Subscriptions</li>
+        <li>Parental Controls</li>
+        <li>Advanced Settings</li>
+        <li>About</li>
+        <li>YouTube Studio</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Link to external JavaScript file -->
+  <script src="script.js"></script>
+</body>
+</html>

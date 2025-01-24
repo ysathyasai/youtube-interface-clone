@@ -1,0 +1,258 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+/* Light Theme Colors */
+body {
+  background-color: #f9f9f9;
+  color: #000;
+}
+
+/* Header styling */
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #fff;
+  padding: 10px 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+/* Menu and material icons styling */
+.menu-icon, .material-icons {
+  color: #000;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* Logo styling */
+.logo img {
+  height: 24px;
+}
+
+/* Search bar and button styling */
+.header-center {
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
+  max-width: 600px;
+}
+
+.search-bar {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 2px 0 0 2px;
+  background-color: #fff;
+  color: #000;
+}
+
+.search-button {
+  padding: 8px;
+  background-color: #f1f1f1;
+  border: 1px solid #ddd;
+  border-left: none;
+  border-radius: 0 2px 2px 0;
+  cursor: pointer;
+}
+
+.search-button .material-icons {
+  font-size: 18px;
+}
+
+/* Icon styling */
+.icon {
+  font-size: 24px;
+  margin-left: 20px;
+  cursor: pointer;
+}
+
+/* Sidebar styling */
+.sidebar {
+  width: 240px;
+  background-color: #fff;
+  padding: 20px 10px;
+  position: fixed;
+  top: 56px;
+  bottom: 0;
+  overflow-y: auto;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  transform: translateX(-250px);
+  transition: transform 0.3s ease;
+}
+
+.sidebar.open {
+  transform: translateX(0);
+}
+
+.sidebar ul {
+  list-style: none;
+}
+
+.sidebar ul li {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.sidebar ul li:hover {
+  background-color: #f1f1f1;
+}
+
+.sidebar ul li span {
+  margin-left: 15px;
+  font-size: 14px;
+}
+
+.sidebar ul li.active {
+  background-color: #e0e0e0;
+}
+
+.settings-option {
+  padding-left: 40px;
+  cursor: default;
+}
+
+/* Main content styling */
+.container {
+  display: flex;
+}
+
+.main-content {
+  margin-left: 240px;
+  padding: 20px;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.video-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+.video-card {
+  background-color: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  width: 360px; /* Increase width for more visual appeal */
+}
+
+.video-info {
+  display: flex;
+  padding: 10px;
+  align-items: center;
+  text-align: left;
+}
+
+.channel-icon img {
+  border-radius: 50%;
+  height: 40px;
+  margin-right: 10px;
+}
+
+h3 {
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+p {
+  font-size: 12px;
+  color: #606060;
+}
+
+.menu-dots {
+  cursor: pointer;
+  margin-left: auto;
+}
+
+.menu-dropdown {
+  display: none;
+  position: absolute;
+  background-color: #fff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 180px; /* Increase width for more visual appeal */
+}
+
+.menu-dropdown.show {
+  display: block;
+}
+
+.menu-dropdown ul {
+  list-style: none;
+  padding: 10px;
+}
+
+.menu-dropdown ul li {
+  padding: 10px;
+  cursor: pointer;
+}
+
+.menu-dropdown ul li:hover {
+  background-color: #f1f1f1;
+}
+
+/* Modal styling */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+  background-color: #fff;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  max-width: 600px;
+  border-radius: 8px;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.settings-list {
+  list-style: none;
+  padding: 0;
+}
+
+.settings-list li {
+  padding: 10px 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.settings-list li:last-child {
+  border-bottom: none;
+}
