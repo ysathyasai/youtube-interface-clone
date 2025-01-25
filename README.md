@@ -93,11 +93,11 @@ Contributions are welcome! If you have any suggestions or improvements, please f
 If you encounter any issues with the project, please feel free to open an issue on the GitHub repository. Provide as much detail as possible, including steps to reproduce the issue and any relevant screenshots.
 
 ## License
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License - see the [MIT LICENSE](LICENSE) file for details.
 
 ## Acknowledgments
 - Placeholder images from [placeholder.com](https://placeholder.com/)
 - Icons from [Google Material Icons](https://material.io/resources/icons/)
 
 ## Contact
-For any questions or inquiries, please contact [yejjusatyasai2007@gmail.com](mailto:yejjusatyasai2007@gmail.com).
+For any questions or inquiries, please contact [ysatyasai.dev@gmail.com](mailto:ysatyasai.dev@gmail.com).
