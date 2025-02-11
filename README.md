@@ -21,7 +21,7 @@ To get started with this project, follow the steps below to set up and run the p
 ### Installation
 1. **Clone the repository**:
     ```bash
-    git clone https://github.com/yourusername/youtube-interface-clone.git
+    git clone https://github.com/ysathyasai/youtube-interface-clone.git
     ```
 2. **Navigate to the project directory**:
     ```bash
