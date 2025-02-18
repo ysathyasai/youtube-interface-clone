@@ -21,13 +21,17 @@ To get started with this project, follow the steps below to set up and run the p
 ### Installation
 1. **Clone the repository**:
     ```bash
-    git clone https://github.com/ysathyasai/youtube-interface-clone.git
+    git clone -b version-1.0 --single-branch https://github.com/ysathyasai/youtube-interface-clone.git
     ```
 2. **Navigate to the project directory**:
     ```bash
     cd youtube-interface-clone
     ```
-3. **Open the `main.html` file**:
+3. **Check out the tag "v1.0"**:
+    ```bash
+    git checkout tags/v1.0
+    ```
+4. **Open the `main.html` file**:
     - On Windows: Right-click on the `main.html` file and select "Open with" -> "Your Browser".
     - On macOS: Right-click on the `main.html` file and select "Open with" -> "Your Browser".
 
