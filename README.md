@@ -9,6 +9,8 @@ This project is a simple clone of the YouTube interface created using HTML, CSS,
 - **Settings Modal**: A modal window with various settings options.
 - **Responsive Design**: Adjusts layout based on screen size for better user experience.
 - **Interactive Menu**: Three-dot menu with options to Save to Watch Later, Save to Playlist, Download Video, and Report.
+- **API Integration**: Fetches and displays videos using the YouTube Data API.
+- **Search Functionality**: Allows users to search for videos using the YouTube Data API.
 
 ## Getting Started
 To get started with this project, follow the steps below to set up and run the project on your local machine.
@@ -21,13 +23,17 @@ To get started with this project, follow the steps below to set up and run the p
 ### Installation
 1. **Clone the repository**:
     ```bash
-    git clone https://github.com/ysathyasai/youtube-interface-clone.git
+    git clone -b version-2.0 --single-branch https://github.com/ysathyasai/youtube-interface-clone.git
     ```
 2. **Navigate to the project directory**:
     ```bash
     cd youtube-interface-clone
     ```
-3. **Open the `main.html` file**:
+3. **Check out the tag "v2.0"**:
+    ```bash
+    git checkout tags/v2.0
+    ```
+4. **Open the `main.html` file**:
     - On Windows: Right-click on the `main.html` file and select "Open with" -> "Your Browser".
     - On macOS: Right-click on the `main.html` file and select "Open with" -> "Your Browser".
 
@@ -43,31 +49,37 @@ The project consists of the following files:
 - `README.md`: This file, providing information about the project.
 - `.gitignore`: A file specifying which files and directories to ignore in version control.
 - `LICENSE`: A file containing the license information for the project.
-
+---
 ### Detailed Description
 This project aims to replicate the basic user interface of YouTube. It is intended for educational purposes, helping beginners understand the structure and style of modern web applications. The interface includes a header with a search bar, a sidebar with navigation links, and a main content area displaying video cards. Additionally, a settings modal is included to demonstrate modal functionality.
+
+---
 
 ### Code Explanation
 #### HTML
 The `main.html` file contains the structure of the interface, including:
 - **Header**: Contains the logo, search bar, and icons for notifications and profile.
-- **Sidebar**: Contains navigation links for various sections like Home, Explore, Subscriptions, etc.
+- **Sidebar**: Contains navigation links for various sections like Home, Explore, Subscriptions, Library, History, etc.
 - **Main Content Area**: Displays video cards with information like channel icon, video title, views, etc.
 - **Settings Modal**: A modal window for various settings options.
-
+---
 #### CSS
 The `styles.css` file styles the elements, including:
 - **Header**: Styled to be sticky at the top with a shadow effect.
 - **Sidebar**: Styled with navigation links and hover effects.
 - **Main Content Area**: Styled to center the video cards and provide spacing.
 - **Video Cards**: Styled with a shadow effect, rounded corners, and spacing.
-
+- **Center Content**: Styled to center the content for sections like Subscriptions, Library, and History.
+---
 #### JavaScript
 The `script.js` file adds interactivity, including:
 - **Sidebar Toggle**: Functionality to open and close the sidebar.
 - **Settings Modal**: Functionality to open and close the settings modal.
 - **Three-Dot Menu**: Functionality to handle menu options like Save to Watch Later, Save to Playlist, Download Video, and Report.
-
+- **Tab Content Switching**: Functionality to switch between different tabs (Home, Trending, Subscriptions, Library, History).
+- **API Integration**: Uses the YouTube Data API to fetch and display videos based on user interactions.
+- **Search Functionality**: Allows users to search for videos using the YouTube Data API and displays the results in the main content area.
+---
 ### Customization
 You can customize various parts of the interface by modifying the HTML, CSS, and JavaScript files. Here are a few suggestions:
 
@@ -79,6 +91,13 @@ To add more video cards, duplicate the existing `video-card` div in the `main-co
 
 #### Updating the Sidebar Links
 To update the sidebar links, modify the `ul` list items in the `sidebar` section of `main.html`.
+
+---
+
+### Note
+**Paste your API key in place of the "```USE_YOUR_API_KEY```" in the JavaScript file.**
+
+---
 
 ## Contributing
 Contributions are welcome! If you have any suggestions or improvements, please follow these steps:
