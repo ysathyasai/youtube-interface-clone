@@ -13,42 +13,34 @@
   <!-- Header section -->
   <header>
     <div class="header-left">
-      <!-- Menu icon for toggling the sidebar -->
       <span class="material-icons menu-icon" id="menu-btn">menu</span>
-      <!-- YouTube logo -->
       <div class="logo">
         <img src="https://upload.wikimedia.org/wikipedia/commons/b/b8/YouTube_Logo_2017.svg" alt="YouTube Logo">
       </div>
     </div>
     <div class="header-center">
-      <!-- Search bar input field -->
-      <input type="text" placeholder="Search" class="search-bar">
-      <!-- Search button -->
-      <button class="search-button">
+      <input type="text" placeholder="Search" class="search-bar" id="search-input">
+      <button class="search-button" id="search-button">
         <span class="material-icons">search</span>
       </button>
     </div>
     <div class="header-right">
-      <!-- Notifications icon -->
       <span class="material-icons icon">notifications</span>
-      <!-- Account/profile icon -->
       <span class="material-icons icon">account_circle</span>
     </div>
   </header>
 
   <!-- Main container for sidebar and main content -->
   <div class="container">
-    <!-- Sidebar section -->
     <aside class="sidebar" id="sidebar">
       <ul>
-        <!-- Sidebar navigation links -->
         <li id="home" class="active">
           <span class="material-icons">home</span>
           <span>Home</span>
         </li>
-        <li id="explore">
-          <span class="material-icons">explore</span>
-          <span>Explore</span>
+        <li id="trending">
+          <span class="material-icons">whatshot</span>
+          <span>Trending</span>
         </li>
         <li id="subscriptions">
           <span class="material-icons">subscriptions</span>
@@ -77,32 +69,27 @@
       </ul>
     </aside>
 
-    <!-- Main content area -->
     <main class="main-content" id="main-content">
-      <div class="video-grid" id="content">
-        <!-- Example of a video card -->
-        <div class="video-card">
-          <div class="video-info">
-            <!-- Channel icon -->
-            <div class="channel-icon">
-              <img src="https://www.citypng.com/public/uploads/preview/red-youtube-logo-symbol-701751694792489qxkccchok1.png" alt="Channel Icon">
-            </div>
-            <div>
-              <h3>Sample Video</h3>
-              <p>Channel Name</p>
-              <p>1M views • 2 days ago</p>
-            </div>
-            <!-- More options icon -->
-            <span class="material-icons menu-dots" data-menu-id="menu1">more_vert</span>
+      <!-- Tab content for different sections -->
+      <div class="tab-content" id="tab-content">
+        <div class="tab-pane active" id="home-content"></div>
+        <div class="tab-pane" id="trending-content"></div>
+        <div class="tab-pane" id="subscriptions-content">
+          <div class="center-content">
+            <h2>Subscriptions</h2>
+            <p>Latest videos from channels you follow!</p>
           </div>
-          <!-- Dropdown menu for additional options -->
-          <div class="menu-dropdown" id="menu1">
-            <ul>
-              <li class="menu-option" data-action="watch-later">Save to Watch Later</li>
-              <li class="menu-option" data-action="playlist">Save to Playlist</li>
-              <li class="menu-option" data-action="download">Download Video</li>
-              <li class="menu-option" data-action="report">Report</li>
-            </ul>
+        </div>
+        <div class="tab-pane" id="library-content">
+          <div class="center-content">
+            <h2>Library</h2>
+            <p>Your saved videos and playlists.</p>
+          </div>
+        </div>
+        <div class="tab-pane" id="history-content">
+          <div class="center-content">
+            <h2>History</h2>
+            <p>Your history</p>
           </div>
         </div>
       </div>
@@ -112,11 +99,10 @@
   <!-- Modal for settings -->
   <div id="settings-modal" class="modal">
     <div class="modal-content">
-      <!-- Close button for the modal -->
       <span class="close">&times;</span>
       <h2>Settings</h2>
-      <!-- List of settings options -->
       <ul class="settings-list">
+        <li>                </li>
         <li>General Settings</li>
         <li>Video Playback</li>
         <li>Notifications</li>
