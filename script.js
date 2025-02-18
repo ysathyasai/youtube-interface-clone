@@ -1,60 +1,124 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // Get references to sidebar navigation buttons
+  // Get references to navigation buttons
   const homeBtn = document.getElementById("home");
-  const exploreBtn = document.getElementById("explore");
+  const trendingBtn = document.getElementById("trending");
   const subscriptionsBtn = document.getElementById("subscriptions");
   const libraryBtn = document.getElementById("library");
   const historyBtn = document.getElementById("history");
   const settingsBtn = document.getElementById("settings");
+  const searchButton = document.getElementById("search-button");
+  const searchInput = document.getElementById("search-input");
 
-  // Get reference to main content area where content will be updated
+  // Get references to main content and sidebar
   const mainContent = document.getElementById("content");
-
-  // Get reference to menu button for toggling sidebar
   const menuBtn = document.getElementById("menu-btn");
-
-  // Get reference to sidebar
   const sidebar = document.getElementById("sidebar");
 
-  // Function to update the main content area
-  const updateContent = (content) => {
-    mainContent.innerHTML = content;
+  // Get references to tab content sections
+  const homeContent = document.getElementById("home-content");
+  const trendingContent = document.getElementById("trending-content");
+  const subscriptionsContent = document.getElementById("subscriptions-content");
+  const libraryContent = document.getElementById("library-content");
+  const historyContent = document.getElementById("history-content");
+
+  // Map tab ids to their corresponding content elements
+  const tabContents = {
+    home: homeContent,
+    trending: trendingContent,
+    subscriptions: subscriptionsContent,
+    library: libraryContent,
+    history: historyContent
   };
 
-  // Function to set the active navigation button
-  const setActive = (activeBtn) => {
-    // Remove 'active' class from all sidebar buttons
+  // YouTube API key
+  const apiKey = "USE_YOUR_API_KEY";
+
+  // Function to fetch YouTube videos and display them
+  const fetchYouTubeVideos = (url, contentElement) => {
+    fetch(url)
+      .then(response => response.json())
+      .then(data => displayVideos(data.items, contentElement))
+      .catch(error => console.error('Error fetching YouTube videos:', error));
+  };
+
+  // Function to display videos in the content element
+  const displayVideos = (videos, contentElement) => {
+    const videoGrid = document.createElement('div');
+    videoGrid.classList.add('video-grid');
+    contentElement.innerHTML = '';
+
+    // Loop through videos and create video cards
+    videos.forEach(video => {
+      const videoCard = document.createElement('div');
+      videoCard.classList.add('video-card');
+
+      const videoLink = `https://www.youtube.com/watch?v=${video.id.videoId}`;
+      videoCard.innerHTML = `
+        <a href="${videoLink}" target="_blank">
+          <div class="video-thumbnail">
+            <img src="${video.snippet.thumbnails.high.url}" alt="${video.snippet.title}" />
+          </div>
+          <div class="video-info">
+            <div class="channel-icon">
+              <img src="${video.snippet.thumbnails.default.url}" alt="${video.snippet.channelTitle}" />
+            </div>
+            <div>
+              <h3>${video.snippet.title}</h3>
+              <p>${video.snippet.channelTitle}</p>
+              <p>${new Date(video.snippet.publishedAt).toLocaleDateString()}</p>
+            </div>
+          </div>
+        </a>
+      `;
+
+      videoGrid.appendChild(videoCard);
+    });
+
+    contentElement.appendChild(videoGrid);
+  };
+
+  // Function to set active tab and display corresponding content
+  const setActiveTab = (activeBtnId) => {
     document.querySelectorAll(".sidebar ul li").forEach(btn => {
       btn.classList.remove("active");
     });
-    // Add 'active' class to the clicked button
-    activeBtn.classList.add("active");
+    document.getElementById(activeBtnId).classList.add("active");
+
+    document.querySelectorAll(".tab-pane").forEach(tab => {
+      tab.classList.remove("active");
+    });
+    tabContents[activeBtnId].classList.add("active");
   };
 
-  // Event listeners for sidebar navigation buttons
+  // Event listeners for navigation buttons
   homeBtn.addEventListener("click", () => {
-    setActive(homeBtn);
-    updateContent(`<h2>Home</h2><p>Welcome to Home!</p>`);
+    setActiveTab("home");
+    const url = `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=10&q=technology&key=${apiKey}`;
+    fetchYouTubeVideos(url, homeContent);
   });
 
-  exploreBtn.addEventListener("click", () => {
-    setActive(exploreBtn);
-    updateContent(`<h2>Explore</h2><p>Trending and new content!</p>`);
+  trendingBtn.addEventListener("click", () => {
+    setActiveTab("trending");
+    const url = `https://www.googleapis.com/youtube/v3/videos?part=snippet&chart=mostPopular&maxResults=10&regionCode=US&key=${apiKey}`;
+    fetchYouTubeVideos(url, trendingContent);
   });
 
   subscriptionsBtn.addEventListener("click", () => {
-    setActive(subscriptionsBtn);
-    updateContent(`<h2>Subscriptions</h2><p>Latest videos from channels you follow!</p>`);
+    setActiveTab("subscriptions");
+    // Dummy content for subscriptions as actual API requires OAuth for user-specific data
+    subscriptionsContent.innerHTML = `<div class="center-content"><h2>Subscriptions</h2><p>Latest videos from channels you follow!</p></div>`;
   });
 
   libraryBtn.addEventListener("click", () => {
-    setActive(libraryBtn);
-    updateContent(`<h2>Library</h2><p>Your saved videos and playlists.</p>`);
+    setActiveTab("library");
+    // Dummy content for library as actual API requires OAuth for user-specific data
+    libraryContent.innerHTML = `<div class="center-content"><h2>Library</h2><p>Your saved videos and playlists.</p></div>`;
   });
 
   historyBtn.addEventListener("click", () => {
-    setActive(historyBtn);
-    updateContent(`<h2>History</h2><p>Watch history.</p>`);
+    setActiveTab("history");
+    // Dummy content for history as actual API requires OAuth for user-specific data
+    historyContent.innerHTML = `<div class="center-content"><h2>History</h2><p>Your history</p></div>`;
   });
 
   // Event listener for menu button to toggle sidebar
@@ -62,61 +126,37 @@ document.addEventListener("DOMContentLoaded", () => {
     sidebar.classList.toggle("open");
   });
 
-  // Modal handling
+  // Get references to modal and close button
   const modal = document.getElementById("settings-modal");
   const closeModal = document.getElementsByClassName("close")[0];
 
-  // Event listener for settings button to open modal
+  // Event listener for settings button to display modal
   settingsBtn.addEventListener("click", () => {
     modal.style.display = "block";
   });
 
-  // Event listener for close button to close modal
+  // Event listener for close button to hide modal
   closeModal.addEventListener("click", () => {
     modal.style.display = "none";
   });
 
-  // Event listener to close modal when clicking outside of it
+  // Event listener to hide modal when clicking outside of it
   window.addEventListener("click", (event) => {
     if (event.target == modal) {
       modal.style.display = "none";
     }
   });
 
-  // Function to handle menu option click events
-  const handleMenuOptionClick = (action) => {
-    switch (action) {
-      case "watch-later":
-        alert("Video saved to Watch Later!");
-        break;
-      case "playlist":
-        alert("Video saved to Playlist!");
-        break;
-      case "download":
-        alert("Video download started!");
-        break;
-      case "report":
-        alert("Video reported!");
-        break;
-      default:
-        console.log("Unknown action");
+  // Event listener for search button to perform search
+  searchButton.addEventListener("click", () => {
+    const query = searchInput.value.trim();
+    if (query) {
+      setActiveTab("home");
+      const url = `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=10&q=${query}&key=${apiKey}`;
+      fetchYouTubeVideos(url, homeContent);
     }
-  };
-
-  // Event listener for menu dots to toggle dropdown menu
-  document.querySelectorAll(".menu-dots").forEach(menuDot => {
-    menuDot.addEventListener("click", (event) => {
-      const menuId = event.target.getAttribute("data-menu-id");
-      const dropdownMenu = document.getElementById(menuId);
-      dropdownMenu.classList.toggle("show");
-    });
   });
 
-  // Event listener for menu options
-  document.querySelectorAll(".menu-option").forEach(option => {
-    option.addEventListener("click", (event) => {
-      const action = event.target.getAttribute("data-action");
-      handleMenuOptionClick(action);
-    });
-  });
+  // Trigger home button click event to load home content on page load
+  homeBtn.click();
 });
