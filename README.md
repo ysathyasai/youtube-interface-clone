@@ -37,6 +37,8 @@ To get started with this project, follow the steps below to set up and run the p
     - On Windows: Right-click on the `main.html` file and select "Open with" -> "Your Browser".
     - On macOS: Right-click on the `main.html` file and select "Open with" -> "Your Browser".
 
+---
+
 ## Usage
 Feel free to modify the HTML, CSS, and JavaScript files to customize the interface further. This project is designed to be a starting point for your web development journey.
 
