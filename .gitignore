@@ -37,10 +37,6 @@ lib/
 # Coverage reports
 coverage/
 
-# Dependency directories
-node_modules/
-jspm_packages/
-
 # Optional eslint cache
 .eslintcache
 
@@ -102,3 +98,17 @@ ehthumbs.db
 __pycache__/
 *.py[cod]
 *$py.class
+
+# JavaScript
+*.js.map
+
+# TypeScript
+*.tsbuildinfo
+
+# VS Code
+.history/
+.vscode/
+
+# JetBrains
+.idea/
+*.iml
