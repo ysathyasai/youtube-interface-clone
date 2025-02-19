@@ -84,6 +84,23 @@ To add more video cards, duplicate the existing `video-card` div in the `main-co
 #### Updating the Sidebar Links
 To update the sidebar links, modify the `ul` list items in the `sidebar` section of `main.html`.
 
+## 📌 Versioning Structure
+
+I maintain a **branch-based versioning system** where:
+- Each **major update** gets a new branch (`version-x.x`).
+- Older versions remain untouched for reference.
+- **New users should use the latest branch for development.**
+
+### 🔹 Current Version  (This version)
+🔹 **[`version-1.0`](https://github.com/ysathyasai/youtube-interface-clone/tree/version-1.0)** (Default Branch)  
+
+### 📜 Available Versions (While updating this version)
+| Version  | Branch Name  | Features |
+|----------|-------------|----------|
+| 🟡 v1.0  | **[`version-1.0`](https://github.com/ysathyasai/youtube-interface-clone/tree/version-1.0)** | Base version (starting point) |
+| 🟢 v2.0  | **[`version-2.0`](https://github.com/ysathyasai/youtube-interface-clone/tree/version-2.0)**  | Added API fetch feature |
+
+
 ## Contributing
 Contributions are welcome! If you have any suggestions or improvements, please follow these steps:
 
