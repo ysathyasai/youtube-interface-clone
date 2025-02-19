@@ -1,6 +1,6 @@
 # YouTube Interface Clone
 
-This project is a simple clone of the YouTube interface created using HTML, CSS, and JavaScript. It aims to replicate the basic layout and functionalities of YouTube, including a header with a search bar, a sidebar for navigation, a main content area displaying video cards, and a settings modal. The project is designed to be beginner-friendly, providing a hands-on way to learn and practice web development skills.
+This project is a simple clone of the YouTube interface created by using HTML, CSS, and JavaScript. It aims to replicate the basic layout and functionalities of YouTube, including a header with a search bar, a sidebar for navigation, a main content area displaying video cards, and a settings modal. The project is designed to be beginner-friendly, providing a hands-on way to learn and practice web development skills.
 
 ## Features
 - **Header**: Includes a search bar, notifications icon, and profile icon.
