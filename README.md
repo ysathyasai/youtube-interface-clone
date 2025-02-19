@@ -92,7 +92,7 @@ I maintain a **branch-based versioning system** where:
 - **New users should use the latest branch for development.**
 
 ### 🔹 Current Version  (This version)
-🔹 **[`version-1.0`](https://github.com/ysathyasai/youtube-interface-clone/tree/version-1.0)** (Default Branch)  
+🔹 **[`version-1.0`](https://github.com/ysathyasai/youtube-interface-clone/tree/version-1.0)** (Current Branch)  
 
 ### 📜 Available Versions (While updating this version)
 | Version  | Branch Name  | Features |
