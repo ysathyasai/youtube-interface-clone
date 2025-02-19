@@ -108,15 +108,14 @@ I maintain a **branch-based versioning system** where:
 - Older versions remain untouched for reference.
 - **New users should use the latest branch for development.**
 
-### 🔹 Current Active Version
-The latest development happens in:  
+### 🔹 Current Active Version  (While updating this version)
 🔹 **[`version-2.0`](https://github.com/ysathyasai/youtube-interface-clone/tree/version-2.0)** (Default Branch)  
 
-### 📜 Available Versions
+### 📜 Available Versions (While updating this version)
 | Version  | Branch Name  | Features |
 |----------|-------------|----------|
-| 🟡 v1.0  | `version-1.0`  | Base version (starting point) |
-| 🟢 v2.0  | `version-2.0`  | Added API fetch feature |
+| 🟡 v1.0  | **[`version-1.0`](https://github.com/ysathyasai/youtube-interface-clone/tree/version-1.0)** | Base version (starting point) |
+| 🟢 v2.0  | **[`version-2.0`](https://github.com/ysathyasai/youtube-interface-clone/tree/version-2.0)**  | Added API fetch feature |
 
 ---
 
